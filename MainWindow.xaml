@@ -6,32 +6,93 @@
         xmlns:local="clr-namespace:VisorImagenes"
         mc:Ignorable="d"
         Title="Visor de imagenes" Height="600" Width="703" MinWidth="700" MinHeight="600" Icon="imgs/128.ico">
+
+    <Window.Resources>
+        <Style TargetType="{x:Type TextBlock}" x:Key="TextBlockBottom">
+            <Setter Property="Margin" Value="8"></Setter>
+            <Setter Property="Background" Value="LightBlue"></Setter>
+            <Setter Property="DockPanel.Dock" Value="Bottom"></Setter>
+            <Setter Property="Height" Value="40"></Setter>
+        </Style>
+
+        <Style TargetType="{x:Type TextBlock}" x:Key="NumImagenesTextBlock">
+            <Setter Property="Padding" Value="5,0"></Setter>
+            <Setter Property="Margin" Value="0,5"></Setter>
+            <Setter Property="FontSize" Value="20"></Setter>
+        </Style>
+
+        <Style TargetType="{x:Type TextBlock}" x:Key="AutorTextBlock">
+            <Setter Property="Width" Value="282"></Setter>
+            <Setter Property="Margin" Value="210,5"></Setter>
+            <Setter Property="FontSize" Value="20"></Setter>
+        </Style>
+
+        <Style TargetType="{x:Type TextBlock}" x:Key="PanelDrchaTextBlock">
+            <Setter Property="Background" Value="LightGreen"></Setter>
+            <Setter Property="Margin" Value="8"></Setter>
+            <Setter Property="Width" Value="120"></Setter>
+            <Setter Property="DockPanel.Dock" Value="Right"></Setter>
+        </Style>
+
+        <Style TargetType="{x:Type Border}">
+            <Setter Property="BorderBrush" Value="Black"></Setter>
+            <Setter Property="BorderThickness" Value="3"></Setter>
+        </Style>
+
+        <Style TargetType="{x:Type DockPanel}" x:Key="PanelDrchaDock">
+            <Setter Property="LastChildFill" Value="False"></Setter>
+            <Setter Property="Height" Value="491"></Setter>
+        </Style>
+
+        <Style TargetType="{x:Type Button}" x:Key="ButtonArriba">
+            <Setter Property="Margin" Value="10,3"></Setter>
+            <Setter Property="DockPanel.Dock" Value="Top"></Setter>
+        </Style>
+
+        <Style TargetType="{x:Type Button}" x:Key="ButtonAbajo">
+            <Setter Property="Margin" Value="10,3"></Setter>
+            <Setter Property="DockPanel.Dock" Value="Bottom"></Setter>
+        </Style>
+
+        <Style TargetType="{x:Type TextBlock}" x:Key="TextBlockTitulo">
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+            <Setter Property="DockPanel.Dock" Value="Top"></Setter>
+            <Setter Property="FontSize" Value="40"></Setter>
+            <Setter Property="FontFamily" Value="Rubik"></Setter>
+        </Style>
+
+        <Style TargetType="{x:Type Image}" x:Key="Imagenes">
+            <Setter Property="Source" Value="imgs/episodioIV.jpg"></Setter>
+            <Setter Property="Height" Value="200"></Setter>
+        </Style>
+    </Window.Resources>
+    
     <DockPanel>
-        <TextBlock Margin="8" Background="LightBlue" DockPanel.Dock="Bottom" Height="40">
-            <TextBlock Padding="5,0" Margin="0,5" FontSize="20">Nº de imagenes : 8</TextBlock>
-            <TextBlock Margin="210,5" FontSize="20" Width="282">Diseñado por Hermes Núñez</TextBlock>
+        <TextBlock Style="{StaticResource TextBlockBottom}">
+            <TextBlock Style="{StaticResource NumImagenesTextBlock}">Nº de imagenes : 8</TextBlock>
+            <TextBlock Style="{StaticResource AutorTextBlock}">Diseñado por Hermes Núñez</TextBlock>
         </TextBlock>
-        <TextBlock Margin="8" Background="LightGreen" Width="120" DockPanel.Dock="Right">
-            <Border BorderBrush="Black" BorderThickness="3">
-            <DockPanel LastChildFill="False" Height="491">
-                <Button Margin="10,3" Content="Añadir imagen" DockPanel.Dock="Top"/>
-                <Button Margin="10,3" Content="Eliminar imagen" DockPanel.Dock="Top"/>
-                <Button Margin="10,3" Content="Eliminar todas" DockPanel.Dock="Top"/>
-                <Button Margin="10,3" Content="Rotar" DockPanel.Dock="Bottom"/>
-                <Button Margin="10,3" Content="Recortar" DockPanel.Dock="Bottom"/>
+        <TextBlock Style="{StaticResource PanelDrchaTextBlock}">
+            <Border>
+            <DockPanel Style="{StaticResource PanelDrchaDock}">
+                <Button Style="{StaticResource ButtonArriba}">Añadir imagen</Button>
+                <Button Style="{StaticResource ButtonArriba}">Eliminar imagen</Button>
+                <Button Style="{StaticResource ButtonArriba}">Eliminar todas</Button>
+                <Button Style="{StaticResource ButtonAbajo}">Rotar</Button>
+                <Button Style="{StaticResource ButtonArriba}">Recortar</Button>
             </DockPanel>
             </Border>
         </TextBlock>
-        <TextBlock HorizontalAlignment="Center" DockPanel.Dock="Top" FontSize="40" FontFamily="Rubik">Visor de imagenes</TextBlock>
+        <TextBlock Style="{StaticResource TextBlockTitulo}">Visor de imagenes</TextBlock>
         <WrapPanel>
-            <Image Source="imgs/episodioIV.jpg" Height="200"/>
-            <Image Source="imgs/episodioIV.jpg" Height="200"/>
-            <Image Source="imgs/episodioIV.jpg" Height="200"/>
-            <Image Source="imgs/episodioIV.jpg" Height="200"/>
-            <Image Source="imgs/episodioIV.jpg" Height="200"/>
-            <Image Source="imgs/episodioIV.jpg" Height="200"/>
-            <Image Source="imgs/episodioIV.jpg" Height="200"/>
-            <Image Source="imgs/episodioIV.jpg" Height="200"/>
+            <Image Style="{StaticResource Imagenes}"/>
+            <Image Style="{StaticResource Imagenes}"/>
+            <Image Style="{StaticResource Imagenes}"/>
+            <Image Style="{StaticResource Imagenes}"/>
+            <Image Style="{StaticResource Imagenes}"/>
+            <Image Style="{StaticResource Imagenes}"/>
+            <Image Style="{StaticResource Imagenes}"/>
+            <Image Style="{StaticResource Imagenes}"/>
         </WrapPanel>
     </DockPanel>
 </Window>
